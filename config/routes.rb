@@ -1,6 +1,9 @@
 SampleApp::Application.routes.draw do
   
-  get "users/new"
+  resources :users
+
+  #resources :usersでRESTfulなUsersリソースで必要となる全てのアクションが利用できる
+  #get "users/new"
 
   root 'static_pages#home'
 
