@@ -2,12 +2,18 @@ SampleApp::Application.routes.draw do
   
   resources :users
 
+  #Code10.2
+  resources :sessions,only: [:new, :create, :destroy]
+
   #resources :usersでRESTfulなUsersリソースで必要となる全てのアクションが利用できる
   #get "users/new"
 
   root 'static_pages#home'
 
+  #Code10.2
   match '/signup', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
 
   match '/help', to: 'static_pages#help', via: 'get'
 
