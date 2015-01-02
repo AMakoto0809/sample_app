@@ -10,15 +10,22 @@ gem 'sprockets','2.11.0'
 
 gem 'bcrypt-ruby','3.1.2'
 
+#Code11.28 faker
+gem 'faker','1.1.2'
+
+#Code11.30
+gem 'will_paginate','3.0.4'
+gem 'bootstrap-will_paginate','0.0.9'
+
 # Use sqlite3 as the database for Active Record
 group :development do
-	gem 'sqlite3','1.3.8'
+	gem 'sqlite3','1.3.9'
 end
 # Use SCSS for stylesheets
-gem 'sass-rails', '4.0.2'
+gem 'sass-rails', '4.0.3'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '2.1.1'
+gem 'uglifier', '2.5.3'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '4.0.1'
@@ -27,17 +34,17 @@ gem 'coffee-rails', '4.0.1'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '3.0.4'
+gem 'jquery-rails', '3.1.2'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks','1.1.1'
+gem 'turbolinks','2.5.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '1.0.2'
+gem 'jbuilder', '1.5.3'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc','0.3.20', require: false
+  gem 'sdoc','0.4.1', require: false
 end
 
 group :production do
