@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    #Code12.19
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def create
@@ -69,13 +71,14 @@ private
 
   #Before actions
 
-  def signed_in_user
-    unless signed_in?
-      #Code11.18
-      store_location
-      redirect_to signin_url,notice: "Please sign in."
-    end
-  end
+  #Code12.24 app/helpers/sessions_helper.rb へ追加したため下記記述をコメント
+  #def signed_in_user
+  #  unless signed_in?
+  #    #Code11.18
+  #    store_location
+  #    redirect_to signin_url,notice: "Please sign in."
+  #  end
+  #end
 
   #Code11.14
   def correct_user

@@ -3,7 +3,10 @@ SampleApp::Application.routes.draw do
   resources :users
 
   #Code10.2
-  resources :sessions,only: [:new, :create, :destroy]
+  resources :sessions,  only: [:new, :create, :destroy]
+
+  #Code12.22
+  resources :microposts,  only:[:create, :destroy]
 
   #resources :usersでRESTfulなUsersリソースで必要となる全てのアクションが利用できる
   #get "users/new"

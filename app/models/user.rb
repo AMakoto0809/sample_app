@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+	#Code12.8
+	#Code12.13(dependent: :destroy)
+	has_many :microposts,dependent: :destroy
+	
 	#code 8.29 -SecurePassWord-
 	before_save { self.email = email.downcase }
 
@@ -20,6 +24,10 @@ class User < ActiveRecord::Base
 
 	#SecurePassword -list6.29-
 	validates :password, length: { minimum: 6 }
+
+	def feed
+		Micropost.where("user_id = ?",id)
+	end
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
